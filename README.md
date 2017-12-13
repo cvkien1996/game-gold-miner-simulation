@@ -1,4 +1,4 @@
 # Game Gold Miner simulation
 ```
-Game Gold Miner simulate on Windows Form
+Game Gold Miner server-clients simulate on Windows Form
 ```
