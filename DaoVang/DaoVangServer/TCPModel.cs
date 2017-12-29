@@ -20,7 +20,7 @@ namespace DaoVangServer
             port_to_listen = p;
             tcpServer = new TcpListener(ipAd_of_server, port_to_listen);
         }
-        //function to listen
+
         public void Listen()
         {
             try
@@ -32,14 +32,14 @@ namespace DaoVangServer
                 Console.WriteLine("Error..... " + e.StackTrace);
             }
         }
-        //accept a new connection
+
         public Socket SetUpANewConnection(ref int status)
         {
             Socket socket = tcpServer.AcceptSocket();
             status = 1;
             return socket;
         }
-        //shutdown server
+
         public void Shutdown()
         {
             tcpServer.Stop();

@@ -43,8 +43,7 @@ namespace DaoVangServer
             }
             return str;
         }
-
-
+    
         public byte[] SerializeData(Object o)
         {
             MemoryStream ms = new MemoryStream();
@@ -52,8 +51,6 @@ namespace DaoVangServer
             bf1.Serialize(ms, o);
             return ms.ToArray();
         }
-
-
         public Object DeserializeData(byte[] theByteArray)
         {
             MemoryStream ms = new MemoryStream(theByteArray);
@@ -61,17 +58,14 @@ namespace DaoVangServer
             ms.Position = 0;
             return bf1.Deserialize(ms);
         }
-        //receive data from client
+
         public string ReceiveStringData()
         {
-            //server just can receive data AFTER a connection is set up between server and client
             string str = "";
             try
             {
-                //count the length of data received (maximum is 100 bytes)
                 int k = socket.Receive(array_to_receive_data);
                 Console.WriteLine("From client:");
-                //convert the byte recevied into string
                 char[] c = new char[k];
                 for (int i = 0; i < k; i++)
                 {
@@ -88,17 +82,13 @@ namespace DaoVangServer
             }
             return str;
         }
-
         public Object ReceiveObjectData()
         {
-            //server just can receive data AFTER a connection is set up between server and client
             Object obj = null;
             try
             {
-                //count the length of data received (maximum is 100 bytes)
                 int k = socket.Receive(array_to_receive_data);
                 Console.WriteLine("From client:");
-                //convert the byte recevied into string
                 obj = DeserializeData(array_to_receive_data);
             }
             catch (Exception e)
@@ -108,7 +98,6 @@ namespace DaoVangServer
             return obj;
         }
 
-        //send data to client
         public void SendData(string str)
         {
             try
@@ -121,7 +110,6 @@ namespace DaoVangServer
                 Console.WriteLine("Error..... " + e.StackTrace);
             }
         }
-
         public void SendData(Object obj)
         {
             try

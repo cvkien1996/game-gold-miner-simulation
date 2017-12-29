@@ -10,7 +10,7 @@ namespace DaoVangObjects
     [Serializable]
     public class SquareBlock
     {
-        protected int size;
+        protected int size; // 25, 40, 100
         protected int xLocation;
         protected int yLocation;
         protected int type; // 1->gold, 2->rock, 3->diamond
@@ -70,14 +70,14 @@ namespace DaoVangObjects
             int result = 0;
             switch (type)
             {
-                case 1:
-                    result = size * 3;
+                case 1: //gold
+                    result = size * 3; // 75, 120, 300 
                     break;
                 case 2:
-                    result = size;
+                    result = size; // 25, 40
                     break;
                 case 3:
-                    result = size * 25;
+                    result = size * 25; // 625
                     break;
             }
             return result;

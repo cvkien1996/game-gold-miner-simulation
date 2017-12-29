@@ -11,9 +11,9 @@ namespace DaoVangObjects
     public class Grabber
     {
         public int isMoveRight; // left=0 or right=1
-        public int isGrabbing;
+        public int isGrabbing; 
         public SquareBlock grabbedItem;
-        public int grabbedItem_index;
+        public int grabbedItem_index; // index cua item trong List cua Mine, Mine Buttons
         private int xLocation;
         private int yLocation;
 

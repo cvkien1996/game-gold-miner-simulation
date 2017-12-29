@@ -25,7 +25,7 @@ namespace DaoVangClient
             tcpclnt = new TcpClient();
             byteReceive = new byte[5000];
         }
-        //show information of client to update UI
+
         public string ClientInformation()
         {
             string str = "";
@@ -41,7 +41,7 @@ namespace DaoVangClient
             }
             return str;
         }
-        //Set up a connection to server and get stream for communication
+
         public int ConnectToServer()
         {
             try
@@ -74,7 +74,6 @@ namespace DaoVangClient
             return bf1.Deserialize(ms);
         }
 
-        //Send data to server after connection is set up
         public int SendData(string str)
         {
             try
@@ -90,17 +89,15 @@ namespace DaoVangClient
                 return -1;
             }
         }
-        //Read data from server after connection is set up
+
         public string ReadStringData()
         {
             string str = "";
             try
             {
-                //count the length of data received
                 int k = stm.Read(byteReceive, 0, 5000);
                 Console.WriteLine("Length of data received: " + k.ToString());
                 Console.WriteLine("From server: ");
-                //conver the byte recevied into string
                 char[] c = new char[k];
                 for (int i = 0; i < k; i++)
                 {
@@ -137,11 +134,9 @@ namespace DaoVangClient
             Object obj = null;
             try
             {
-                //count the length of data received
                 int k = stm.Read(byteReceive, 0, 5000);
                 Console.WriteLine("Length of data received: " + k.ToString());
                 Console.WriteLine("From server: ");
-                //conver the byte recevied into string
                 obj = DeserializeData(byteReceive);
             }
             catch (Exception e)
@@ -151,7 +146,6 @@ namespace DaoVangClient
             return obj;
         }
 
-        //close connection
         public void CloseConnection()
         {
             tcpclnt.Close();
