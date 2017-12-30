@@ -28,7 +28,7 @@ namespace DaoVangObjects
             numberOfBigMine = 7;
             numberOfSmallRock = 15;
             numberOfBigRock = 20;
-            numberOfDiamond = 3;
+            numberOfDiamond = 5;
             sizeOfSmallMine = 25;
             sizeOfMediumMine = 40;
             sizeOfBigMine = 100;
@@ -55,7 +55,7 @@ namespace DaoVangObjects
         public void init()
         {
             int i;
-            /*
+            
             //gold
             for (i = 0; i < numberOfSmallMine; i++)
             {
@@ -79,7 +79,7 @@ namespace DaoVangObjects
             {
                 generateListOfBlocks(12, 700, 200, 680, sizeOfMediumMine, 2);
             }
-            */
+            
             //diamond
             for (i = 0; i < numberOfDiamond; i++)
             {
